@@ -9,9 +9,9 @@ import java.math.BigDecimal;
 @Service
 public class KeyGeneratorService {
 
-    private String base62Encode(String url) {
+    public String base62Encode(String url) {
         Base62 base62 = Base62.createInstance();
         byte[] encode = base62.encode(url.getBytes());
-        return new String(encode);
+        return new String(encode).substring(0, 8);
     }
 }
